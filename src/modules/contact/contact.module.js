@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
-import angular from "angular";
-import contactComponent from "./contact.component";
+import angular from 'angular';
+import contactComponent from './contact.component';
 
-debugger;
+
 let contactModule = angular.module('app.contactModule', [])
-    .component("app.contactComponent", contactComponent);
+	.component('app.contactComponent', contactComponent);
 
 export default contactModule;

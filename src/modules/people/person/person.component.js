@@ -1,24 +1,24 @@
-"use strict";
+'use strict';
 
-import personTemplate from "./person.view.html";
+import personTemplate from './person.view.html';
 
 var personComponent = {
-    bindings: {
-        person: '<'
-    },
-    template: personTemplate,
-    controller: personController
-}
+	bindings: {
+		person: '<'
+	},
+	template: personTemplate,
+	controller: personController
+};
 
-personController.$inject = ['$scope', '$log'];
+personController.$inject = [];
 
 export default personComponent;
 
-function personController($scope, $log) {
+function personController() {
 
-    let ctrl = this;
-    ctrl.title = 'person';
+	let ctrl = this;
+	ctrl.title = 'person';
 
-    ctrl.$onInit = function () { }
+	ctrl.$onInit = function () { };
 
 }

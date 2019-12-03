@@ -1,22 +1,22 @@
-"use strict";
+'use strict';
 
-import contactTemplate from "./contact.view.html";
+import contactTemplate from './contact.view.html';
 
 var contactComponent = {
-    bindings: { },
-    template: contactTemplate,
-    controller: contactController
-}
+	bindings: { },
+	template: contactTemplate,
+	controller: contactController
+};
 
-contactController.$inject = ['$scope', '$log'];
+contactController.$inject = [];
 
 export default contactComponent;
 
-function contactController($scope, $log) {
+function contactController() {
 
-    let ctrl = this;
-    ctrl.title = "Contact?";
+	let ctrl = this;
+	ctrl.title = 'Contact?';
     
-    ctrl.$onInit = function () { }
+	ctrl.$onInit = function () { };
 
 }
