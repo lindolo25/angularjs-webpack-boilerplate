@@ -6,11 +6,11 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '.dist')
     },
     devServer: {
-        contentBase: './dist',
-        open: false
+        contentBase: __dirname,
+        port: 3000
     },
     module: {
         rules: [

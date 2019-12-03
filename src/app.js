@@ -1,8 +1,10 @@
+'use strict';
+
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import { Home } from './modules';
 
-angular.module('app', [uirouter.default])
+angular.module('app', [uirouter, Home.name])
     .constant('appName', 'Clicky-Game')
     .config(['$urlRouterProvider', function ($urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
