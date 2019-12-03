@@ -1,8 +1,9 @@
+"use strict";
+
 import angular from "angular";
-import HomeComponent from './home.component';
+import homeComponent from "./home.component";
 
-let Home = angular
-    .module('app.home', [])
-    .component('home.component', HomeComponent);
+let homeModule = angular.module('app.homeModule', [])
+    .component("app.homeComponent", homeComponent);
 
-export default Home;
+export default homeModule;

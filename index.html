@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <div ng-app="app">
-        <ui-view></ui-view>
-    </div>
-    
+    <nav>
+        <ul>
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="contact">Contact</a></li>
+            <li><a ui-sref="people">People</a></li>
+        </ul>
+    </nav>
+    <ui-view></ui-view>
+
     <script src="bundle.js"></script>
 </body>
+
 </html>

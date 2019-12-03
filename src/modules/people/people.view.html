@@ -1,0 +1,5 @@
+<h1>{{ $ctrl.title }}</h1>
+<ul>
+    <li ng-repeat="person in $ctrl.people"><a ui-sref="person({ personId: $index })">{{ person.name }}</a></li>
+</ul>
+<div ui-view></div>
