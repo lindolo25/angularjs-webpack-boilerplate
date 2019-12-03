@@ -1,0 +1,25 @@
+{
+	"name": "clicky-game",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "npx webpack --config webpack.config.js",
+		"start": "webpack-dev-server"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.7.4",
+		"babel-loader": "^8.0.6",
+		"babel-preset-env": "^1.7.0",
+		"html-loader": "^0.5.5",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.9.0"
+	},
+	"dependencies": {
+		"angular": "^1.7.9",
+		"angular-ui-router": "^1.0.22"
+	}
+}
