@@ -1,3 +1,5 @@
+/.dist
+/_dist
 /dist
 /node_modules
 .env
