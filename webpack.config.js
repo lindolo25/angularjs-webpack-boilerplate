@@ -6,6 +6,7 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         filename: 'bundle.js',
+        chunkFilename: "[name].[chunkhash].js",
         path: path.resolve(__dirname, '.dist')
     },
     devServer: {
@@ -26,14 +27,7 @@ module.exports = {
             {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', ["minify", {
-                            "mangle": false
-                        }]]
-                    }
-                }
+                use: ['babel-loader']
             },
             {
                 test: /\.css$/i,
