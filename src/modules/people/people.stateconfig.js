@@ -9,12 +9,12 @@ export default ['$stateProvider', function ($stateProvider) {
 				}]
 			},
 			lazyLoad: ($transition$) => {
-				const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
+				const $ocLazyLoad = $transition$.injector().get('$ocLazyLoad');
 
-				return import(/* webpackChunkName: "people.module" */ "./people.module")
+				return import(/* webpackChunkName: "people.module" */ './people.module')
 					.then(mod => $ocLazyLoad.load(mod.default))
 					.catch(err => {
-						throw new Error("Ooops, something went wrong, " + err);
+						throw new Error('Ooops, something went wrong, ' + err);
 					});
 			}
 		});
