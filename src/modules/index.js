@@ -12,9 +12,9 @@ import peopleConfig from './people/people.stateconfig';
 import personConfig from './people/person/person.stateconfig';
 
 let modulesConfig = angular.module('app.modules', [
-    uiRouter, 
-    homeModule.name,
-    contactModule.name
+	uiRouter, 
+	homeModule.name,
+	contactModule.name
 ])
 	.config(homeConfig)
 	.config(contactConfig)
