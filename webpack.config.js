@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const devServer = {
-    contentBase: __dirname,
+    contentBase: path.resolve(__dirname, '.dist'),
     port: 3000
 };
 
@@ -30,6 +30,7 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.(html)$/,
+                    exclude:  path.resolve("./src/index.html"),
                     use: {
                         loader: 'html-loader',
                         options: {
@@ -52,7 +53,7 @@ module.exports = (env) => {
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 filename: "index.html",
-                template: path.resolve("./index.html")
+                template: path.resolve("./src/index.html")
             })
         ]
     };
