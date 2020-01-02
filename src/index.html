@@ -9,14 +9,23 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="contact">Contact</a></li>
-            <li><a ui-sref="people">People</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" ui-sref="home">Home</a>
+                <a class="nav-item nav-link" ui-sref="contact">Contact</a>
+                <a class="nav-item nav-link" ui-sref="people">People</a>
+            </div>
+        </div>
     </nav>
-    <ui-view></ui-view>
+    <div class="container-fluid">
+        <ui-view></ui-view>
+    </div>
 </body>
 
 </html>
