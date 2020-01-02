@@ -1,6 +1,6 @@
 'use strict';
 
-import 'bootstrap/dist/css/bootstrap.css';
+import './app.scss';
 import 'bootstrap';
 import angular from 'angular';
 import 'oclazyload';
