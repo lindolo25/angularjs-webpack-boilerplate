@@ -32,8 +32,14 @@
 		"webpack-dev-server": "^3.9.0"
 	},
 	"dependencies": {
+		"@angular/common": "^9.1.7",
+		"@angular/compiler": "^9.1.7",
+		"@angular/core": "^9.1.7",
+		"@angular/platform-browser": "^9.1.7",
+		"@angular/platform-browser-dynamic": "^9.1.7",
+		"@angular/upgrade": "^9.1.7",
+		"@uirouter/angular-hybrid": "^10.0.1",
 		"angular": "^1.7.9",
-		"angular-ui-router": "^1.0.22",
 		"bootstrap": "^4.4.1",
 		"jquery": "^3.5.0",
 		"oclazyload": "^1.1.0",
