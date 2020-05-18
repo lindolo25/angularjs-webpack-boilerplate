@@ -1,6 +1,7 @@
 'use strict';
 
 import angular from 'angular';
+import uiRouter from '@uirouter/angularjs';
 // Modules
 import homeModule from './home/home.module';
 import contactModule from './contact/contact.module';
@@ -12,7 +13,8 @@ import personConfig from './people/person/person.stateconfig';
 
 let modulesConfig = angular.module('app.modules', [ 
 	homeModule.name,
-	contactModule.name
+	contactModule.name,
+	uiRouter,
 ])
 	.config(homeConfig)
 	.config(contactConfig)
