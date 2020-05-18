@@ -1,7 +1,6 @@
 'use strict';
 
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 // Modules
 import homeModule from './home/home.module';
 import contactModule from './contact/contact.module';
@@ -11,8 +10,7 @@ import homeConfig from './home/home.stateconfig';
 import peopleConfig from './people/people.stateconfig';
 import personConfig from './people/person/person.stateconfig';
 
-let modulesConfig = angular.module('app.modules', [
-	uiRouter, 
+let modulesConfig = angular.module('app.modules', [ 
 	homeModule.name,
 	contactModule.name
 ])
