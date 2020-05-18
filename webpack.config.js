@@ -21,6 +21,9 @@ module.exports = (env) => {
 			chunkFilename: '[name].[chunkhash].js',
 			path: path.resolve(__dirname, '.dist')
 		},
+		resolve: {
+			extensions: ['.js', '.ts']
+		},
 		module: {
 			rules: [
 				{
@@ -38,6 +41,10 @@ module.exports = (env) => {
 							attrs: [':data-src']
 						}
 					}
+				},
+				{
+					test: /\.tsx?$/,  
+					use: [ 'awesome-typescript-loader?noEmit=true' ]
 				},
 				{
 					test: /\.js$/,
