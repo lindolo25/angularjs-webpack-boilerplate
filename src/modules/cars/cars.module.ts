@@ -6,12 +6,13 @@ import { carsListState } from "./carsList/carsList.stateconfig";
 import { CarsList } from "./carsList/carsList.component";
 import { carDetailState } from './carDetail/carDetail.stateconfig';
 import { CarDetail } from './carDetail/carDetail.component';
+import { AppLabelDirective } from '../../components/appLabel/appLabelUpgrade.component';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		UIRouterUpgradeModule.forChild({ states: [carsListState, carDetailState] }),
 	],
-	declarations: [CarsList, CarDetail],
+	declarations: [CarsList, CarDetail, AppLabelDirective],
 })
 export class CarsModule { }
