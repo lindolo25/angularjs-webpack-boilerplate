@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 import { UpgradeModule } from '@angular/upgrade/static';
 import { BrowserModule } from '@angular/platform-browser';
 import { UIRouterUpgradeModule } from '@uirouter/angular-hybrid';
-import { carsState } from './cars/cars.stateconfig';
+import { carsState } from './modules/cars/cars.stateconfig';
 
 @NgModule({
     imports: [

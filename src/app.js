@@ -7,7 +7,7 @@ import 'oclazyload';
 import appModules from './modules';
 import services from './services/services.module';
 
-import { Angular2BootstrapModule } from './modules/boostrap.module';
+import { Angular2BootstrapModule } from './angular2Boostrap.module';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { UrlService } from '@uirouter/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
