@@ -2,12 +2,6 @@ import { Component, Input, OnInit } from "@angular/core";
 import template from "./carsList.view.html";
 import { CarsService } from '../../../services/cars.service';
 
-/**
- * This component renders the contacts submodule.
- *
- * On the left is the list of contacts.
- * On the right is the ui-view viewport where contact details appear.
- */
 @Component({
 	selector: 'cars',
 	template: template
@@ -16,9 +10,25 @@ export class CarsList implements OnInit {
 	
 	@Input() cars;
 
-	constructor (private carsService: CarsService) { }
+	makes: String[];
+	selectedMake: String;
+
+	constructor (private carsService: CarsService) {
+		this.makes = carsService.getMakes();
+	}
 
 	ngOnInit () {
 		console.log(this.cars);
+	}
+
+	makeClick(make: String) {
+		if(this.selectedMake === make) {
+			this.selectedMake = null;
+			this.cars = this.carsService.getCars();
+		}
+		else {
+			this.selectedMake = make;
+			this.cars = this.carsService.getCarsByMake(make);
+		}
 	}
 }
