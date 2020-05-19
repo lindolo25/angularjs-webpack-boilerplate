@@ -26,4 +26,8 @@ export class CarsService {
         });
         return makes;
     }
+
+    getCarById(id: string): ICar {
+        return (<ICar[]>cars).find((car) => car.id === id);
+    }
 }
