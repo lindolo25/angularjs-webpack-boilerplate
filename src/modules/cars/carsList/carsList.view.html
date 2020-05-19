@@ -1,1 +1,6 @@
 <h1>Cars Module</h1>
+<div *ngIf="cars">
+    <ul>
+        <li *ngFor="let car of cars">[{{ car.year }}] {{ car.make }} {{ car.model }}</li>
+    </ul>
+</div>
