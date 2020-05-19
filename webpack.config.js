@@ -24,6 +24,9 @@ module.exports = (env) => {
 		resolve: {
 			extensions: ['.js', '.ts']
 		},
+		optimization: {
+			splitChunks: { chunks: 'all', },
+		},
 		module: {
 			rules: [
 				{
