@@ -9,6 +9,9 @@
             (click)="makeClick(make)">{{make}}</button>
     </div>
     <ul>
-        <li *ngFor="let car of cars">[{{ car.year }}] {{ car.make }} {{ car.model }}</li>
+        <li *ngFor="let car of cars">
+            <a uiSref=".car" [uiParams]="{ carId: car.id }" uiSrefActive="selected">[{{ car.year }}] {{ car.make }} {{ car.model }}</a>
+        </li>
     </ul>
+    <ui-view></ui-view>
 </div>
