@@ -6,6 +6,7 @@ import angular from 'angular';
 import 'oclazyload';
 import appModules from './modules';
 import services from './services/services.module';
+import components from './components/components.module';
 
 import { Angular2BootstrapModule } from './angular2Boostrap.module';
 import { UpgradeModule } from '@angular/upgrade/static';
@@ -15,6 +16,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 angular.module('app', [
 	appModules.name,
 	services.name,
+	components.name,
 	'oc.lazyLoad',
 	'ui.router.upgrade'
 ])
