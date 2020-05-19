@@ -1,9 +1,7 @@
 <div>
     <h2>{{ $ctrl.title }}</h2>
     <div>
-        <span>{{ $ctrl.person.name }}</span>
-    </div>
-    <div>
-        <span>{{ $ctrl.person.age }}</span>
+        <app-label text="Name" value="$ctrl.person.name"></app-label>
+        <app-label text="Age" value="$ctrl.person.age"></app-label>
     </div>
 </div>

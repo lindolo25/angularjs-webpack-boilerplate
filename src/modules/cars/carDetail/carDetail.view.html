@@ -1,7 +1,7 @@
 <h2>Car Detail</h2>
 <div>
-    <p>ID: <b>{{ car.id }}</b></p>
-    <p>Make: <b>{{ car.make }}</b></p>
-    <p>Model: <b>{{ car.model }}</b></p>
-    <p>Year: <b>{{ car.year }}</b></p>
+    <app-label text="ID" [value]="car.id"></app-label>
+    <app-label text="Make" [value]="car.make"></app-label>
+    <app-label text="Model" [value]="car.model"></app-label>
+    <app-label text="Year" [value]="car.year"></app-label>
 </div>
