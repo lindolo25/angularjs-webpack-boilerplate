@@ -1,10 +1,11 @@
 'use strict';
 
+import angular from 'angular';
 import personTemplate from './person.view.html';
 
 var personComponent = {
 	bindings: {
-		person: '<'
+		pristine: '<person'
 	},
 	template: personTemplate,
 	controller: personController
@@ -19,6 +20,14 @@ function personController() {
 	let ctrl = this;
 	ctrl.title = 'person';
 
-	ctrl.$onInit = function () { };
+	ctrl.$onInit = function () {
+		ctrl.person = angular.copy(ctrl.pristine); 
+	};
+
+	ctrl.saveChanges = function saveChanges(person) {
+		ctrl.pristine.name = person.name;
+		ctrl.pristine.age = person.age;
+		ctrl.edit = false;
+	};
 
 }

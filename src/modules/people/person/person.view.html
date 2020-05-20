@@ -1,7 +1,13 @@
 <div>
     <h2>{{ $ctrl.title }}</h2>
-    <div>
+    <div ng-if="!$ctrl.edit">
         <app-label text="Name" value="$ctrl.person.name"></app-label>
         <app-label text="Age" value="$ctrl.person.age"></app-label>
+        <button type="button" class="btn btn-sm btn-secondary" ng-click="$ctrl.edit = !$ctrl.edit">Edit</button>
+    </div>
+    <div ng-if="$ctrl.edit">
+        <value-editor text="Name" ng-model="$ctrl.person.name" ng-required="true"></value-editor>
+        <value-editor text="Age" ng-model="$ctrl.person.age" ng-required="true"></value-editor>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="$ctrl.saveChanges($ctrl.person)">Save</button>
     </div>
 </div>
