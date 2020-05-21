@@ -1,38 +1,22 @@
 import template from './valueEditor.view.html';
 
-export default function valueEditorDirective() {
+export default {
+	bindings: {
+		text: '@',
+		value: '<ngModel'
+	},
+	template: template,
+	require: {
+		ngModelCtrl: 'ngModel'
+	},
+	controller: valueEditorController
+};
 
-	return {
-		restrict: 'E',
-		scope: {
-			text: '@',
-			value: '<ngModel'
-		},
-		controllerAs: '$ctrl',
-		bindToController: true,
-		compile: function () {
-			return { pre: valueEditorPreLink };
-		},
-		template: template,
-		require: 'ngModel',
-		controller: valueEditorController
+function valueEditorController() {
+
+	const ctrl = this;
+
+	ctrl.valueChanged = function valueChanged() {
+		ctrl.ngModelCtrl.$setViewValue(ctrl.value);
 	};
-
-	function valueEditorPreLink($scope, $element, $attr, ngModelCtrl) {
-		const ctrl = $scope.$ctrl;
-		ctrl.ngModelCtrl = ngModelCtrl;
-	}
-
-	function valueEditorController() {
-		
-		const ctrl = this;
-
-		ctrl.$postLink = function () {
-			console.log('postLink');
-		};
-
-		ctrl.valueChanged = function valueChanged() {
-			ctrl.ngModelCtrl.$setViewValue(ctrl.value);
-		};
-	}
 }
