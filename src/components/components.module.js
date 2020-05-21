@@ -2,10 +2,12 @@
 
 import angular from 'angular';
 import appLabelComponent from './appLabel/appLabel.component';
-import valueEditorDirective from './valueEditor/valueEditor.component';
+import valueEditorComponent from './valueEditor/valueEditor.component';
+import valueEditorWrapper from './valueEditor/valueEditor.wrapper';
 
 let componentsModule = angular.module('app.components', [])
 	.component('appLabel', appLabelComponent)
-	.directive('valueEditor', valueEditorDirective);
+	.component('valueEditor', valueEditorComponent)
+	.component('valueEditorWrapper', valueEditorWrapper);
 
 export default componentsModule;
