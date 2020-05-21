@@ -1,7 +1,15 @@
 <h2>Car Detail</h2>
-<div>
+<div *ngIf="!edit">
     <app-label text="ID" [value]="car.id"></app-label>
     <app-label text="Make" [value]="car.make"></app-label>
     <app-label text="Model" [value]="car.model"></app-label>
     <app-label text="Year" [value]="car.year"></app-label>
+    <button type="button" class="btn btn-sm btn-secondary" (click)="edit = true">Edit</button>
+</div>
+<div *ngIf="edit">
+    <app-label text="ID" [value]="car.id"></app-label>
+    <value-editor text="Make" [(model)]="car.make" [required]="true"></value-editor>
+    <value-editor text="Model" [(model)]="car.model" [required]="true"></value-editor>
+    <value-editor text="Year" [(model)]="car.year" [required]="true"></value-editor>
+    <button type="button" class="btn btn-sm btn-primary" (click)="save(car)">Save</button>
 </div>
