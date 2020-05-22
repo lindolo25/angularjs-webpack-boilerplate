@@ -1,7 +1,14 @@
-<div class="form-group row">
-    <label class="col-sm-1 col-form-label">{{ $ctrl.text }}</label>
+<div class="form-group row mb-0">
+    <label class="col-sm-1 col-form-label">
+        <span>{{ $ctrl.text }}</span>
+        <span class="text-danger" ng-if="$ctrl.required">*</span>
+    </label>
     <di class="col-sm-5">
-        <input type="text" class="form-control" ng-attr-name="{{ $id }}" ng-attr-id="{{ $id }}"
-            ng-model="$ctrl.value" ng-change="$ctrl.valueChanged()" ng-required="$ctrl.required" />
+        <input type="text" class="form-control" 
+            ng-attr-id="{{ $id }}"
+            ng-model="$ctrl.value" 
+            ng-change="$ctrl.valueChanged()"
+            ng-blur="$ctrl.onBlur()" 
+            ng-required="$ctrl.required" />
     </di>
 </div>

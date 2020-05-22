@@ -8,8 +8,10 @@
     <ng-form name="person" ng-if="$ctrl.edit">
         <value-editor name="name" text="Name" ng-model="$ctrl.person.name" ng-required="true"></value-editor>
         <div class="text-danger" ng-if="person.name.$touched && person.name.$invalid">Name is required</div>
-        <value-editor name="age" text="Age" ng-model="$ctrl.person.age" ng-required="true"></value-editor>
+        <value-editor name="age" text="Age" ng-model="$ctrl.person.age" ng-required=""></value-editor>
         <div class="text-danger" ng-if="person.age.$touched && person.age.$invalid">Age is required</div>
-        <button type="button" class="btn btn-sm btn-primary" ng-click="$ctrl.saveChanges($ctrl.person)">Save</button>
+        <button type="button" class="btn btn-sm btn-primary" 
+            ng-disabled="person.$invalid" 
+            ng-click="$ctrl.saveChanges($ctrl.person)">Save</button>
     </ng-form>
 </div>

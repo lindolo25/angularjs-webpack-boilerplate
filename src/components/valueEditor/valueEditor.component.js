@@ -17,7 +17,7 @@ function valueEditorController($attrs) {
 	const ctrl = this;
 
 	$attrs.$observe('ngRequired', function (newValue) {
-		if(ctrl.required !== newValue) {
+		if (ctrl.required !== newValue) {
 			ctrl.required = newValue;
 		}
 	});
@@ -25,4 +25,8 @@ function valueEditorController($attrs) {
 	ctrl.valueChanged = function valueChanged() {
 		ctrl.ngModelCtrl.$setViewValue(ctrl.value);
 	};
+
+	ctrl.onBlur = function onBlur() {
+		ctrl.ngModelCtrl.$setTouched();
+	}
 }
