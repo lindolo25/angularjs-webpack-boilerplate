@@ -9,12 +9,18 @@ export default {
 	require: {
 		ngModelCtrl: 'ngModel'
 	},
-	controller: valueEditorController
+	controller: ['$attrs', valueEditorController]
 };
 
-function valueEditorController() {
+function valueEditorController($attrs) {
 
 	const ctrl = this;
+
+	$attrs.$observe('ngRequired', function (newValue) {
+		if(ctrl.required !== newValue) {
+			ctrl.required = newValue;
+		}
+	});
 
 	ctrl.valueChanged = function valueChanged() {
 		ctrl.ngModelCtrl.$setViewValue(ctrl.value);
