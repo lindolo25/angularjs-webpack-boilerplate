@@ -4,5 +4,5 @@ export default {
 		model: '=',
 		required: '<?'
 	},
-	template: '<value-editor text="{{ $ctrl.text }}" ng-model="$ctrl.model" ng-required="$ctrl.required" />',
+	template: '<value-editor text="{{ $ctrl.text }}" ng-model="$ctrl.model" ng-required="{{ $ctrl.required }}" />'
 };

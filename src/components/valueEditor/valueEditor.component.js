@@ -28,5 +28,5 @@ function valueEditorController($attrs) {
 
 	ctrl.onBlur = function onBlur() {
 		ctrl.ngModelCtrl.$setTouched();
-	}
+	};
 }
