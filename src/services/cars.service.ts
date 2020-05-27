@@ -2,9 +2,7 @@ import { Injectable } from "@angular/core";
 import { ICar } from "../interfaces/ICar";
 import cars from "./cars.json";
 
-@Injectable({
-    providedIn: "root"
-})
+@Injectable()
 export class CarsService {
     
     constructor () {}
