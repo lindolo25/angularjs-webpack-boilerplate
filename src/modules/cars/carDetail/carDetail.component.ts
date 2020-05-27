@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Inject } from "@angular/core";
 import template from "./carDetail.view.html";
 import { ICar } from '../../../interfaces/ICar';
 
 import { GithubUsersApiService } from '../../../services/githubUsersApi.service';
+import { GithubReposApiService, GithubReposApiToken } from '../../../services/githubReposApi.upgrade';
 
 @Component({
 	selector: 'carDetail',
@@ -15,8 +16,8 @@ export class CarDetail implements OnInit {
 	car: ICar;
 	edit: Boolean = false;
     
-	constructor (githubUsersApiService: GithubUsersApiService) {
-		console.log(githubUsersApiService);
+	constructor (githubUsersApiService: GithubUsersApiService, @Inject(GithubReposApiToken) githubReposApiService: GithubReposApiService) {
+		console.log(githubUsersApiService, githubReposApiService);
 	}
 
 	ngOnInit() {
