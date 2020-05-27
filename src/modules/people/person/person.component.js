@@ -22,7 +22,10 @@ function personController(githubReposApiService, githubUsersApiService) {
 
 	ctrl.$onInit = function () {
 		ctrl.person = angular.copy(ctrl.pristine); 
-		console.log(githubReposApiService, githubUsersApiService);
+		githubUsersApiService.getUser('lindolo25')
+			.then(user => {
+				console.log(user);
+			});
 	};
 
 	ctrl.saveChanges = function saveChanges(person) {
