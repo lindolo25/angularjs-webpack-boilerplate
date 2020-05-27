@@ -17,7 +17,11 @@ export class CarDetail implements OnInit {
 	edit: Boolean = false;
     
 	constructor (githubUsersApiService: GithubUsersApiService, @Inject(GithubReposApiToken) githubReposApiService: GithubReposApiService) {
-		console.log(githubUsersApiService, githubReposApiService);
+		githubReposApiService
+			.getRepos('lindolo25')
+			.then(repos => {
+				console.log(repos);
+			});
 	}
 
 	ngOnInit() {
