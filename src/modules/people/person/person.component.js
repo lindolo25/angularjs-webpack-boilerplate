@@ -11,17 +11,18 @@ var personComponent = {
 	controller: personController
 };
 
-personController.$inject = [];
+personController.$inject = ['app.githubReposApiService'];
 
 export default personComponent;
 
-function personController() {
+function personController(githubReposApiService) {
 
 	let ctrl = this;
 	ctrl.title = 'person';
 
 	ctrl.$onInit = function () {
 		ctrl.person = angular.copy(ctrl.pristine); 
+		console.log(githubReposApiService);
 	};
 
 	ctrl.saveChanges = function saveChanges(person) {
