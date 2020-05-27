@@ -8,11 +8,15 @@ import { carDetailState } from './carDetail/carDetail.stateconfig';
 import { CarDetail } from './carDetail/carDetail.component';
 import { AppLabelDirective } from '../../components/appLabel/appLabelUpgrade.component';
 import { ValueEditorDirective } from '../../components/valueEditor/valueEditor.upgrade';
+import { CarsService } from '../../services/cars.service';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		UIRouterUpgradeModule.forChild({ states: [carsListState, carDetailState] }),
+	],
+	providers: [
+		CarsService
 	],
 	declarations: [CarsList, CarDetail, AppLabelDirective, ValueEditorDirective],
 })
