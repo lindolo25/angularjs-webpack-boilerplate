@@ -2,4 +2,53 @@
     @extend .is-invalid;
 }
 
+.show-legend {
+    
+    .ng1-state, .ng2-state,
+    .ng1-component, .ng2-component {
+        border: 1px;
+        border-style: dashed;
+        border-color: green;
+        padding: 5px;
+        padding-top: 17px;
+    }
+
+    .ng1-state::before, .ng2-state::before,
+    .ng1-component::before, .ng2-component::before { 
+        content: "AngularJS state - " attr(data-name);
+        background-color: green;
+        color: white;
+        position: absolute;
+        font-size: 10px;
+        margin-left: -5px;
+        margin-top: -17px;
+    }
+
+    .ng1-component::before {
+        content: "AngularJS component - " attr(data-name);
+    }
+
+    .ng2-state::before, .ng2-component::before {
+        content: "Angular state - " attr(data-name);
+        background-color: red;
+    }
+
+    .ng2-component::before {
+        content: "Angular component - " attr(data-name);
+    }
+    
+    .ng2-state {
+        border-color: red;
+    }
+    
+    .ng1-component, .ng2-component {
+        border-style: solid;
+    }
+    
+    .ng2-component {
+        border-color: red;
+    }
+    
+}
+
 @import "~bootstrap/scss/bootstrap"

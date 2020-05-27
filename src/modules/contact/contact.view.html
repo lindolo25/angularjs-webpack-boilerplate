@@ -1,21 +1,23 @@
-<h1>{{$ctrl.title}}</h1>
-<ng-form class="needs-validation">
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="name">Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" required ng-model="$ctrl.name" />
+<div class="ng1-state" data-name="contact">
+    <h1>{{$ctrl.title}}</h1>
+    <ng-form class="needs-validation">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="name">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" required ng-model="$ctrl.name" />
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="email">Email</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" ng-model="$ctrl.email" />
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="email">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" ng-model="$ctrl.email" />
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="content">Content</label>
-        <div class="col-sm-10">
-            <textarea class="form-control" name="content" id="content" ng-model="$ctrl.content"></textarea>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="content">Content</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="content" id="content" ng-model="$ctrl.content"></textarea>
+            </div>
         </div>
-    </div>
-</ng-form>
+    </ng-form>
+</div>

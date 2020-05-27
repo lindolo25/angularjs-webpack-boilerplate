@@ -1,17 +1,19 @@
-<h1>Cars Module</h1>
-<div *ngIf="cars">
-    <div class="btn-group btn-group-sm mb-2" role="group">
-        <button 
-            type="button" 
-            class="btn btn-secondary"
-            [ngClass]="{'active': selectedMake === make }" 
-            *ngFor="let make of makes"
-            (click)="makeClick(make)">{{make}}</button>
+<div class="ng2-state" data-name="carsList">
+    <h1>Cars Module</h1>
+    <div *ngIf="cars">
+        <div class="btn-group btn-group-sm mb-2" role="group">
+            <button 
+                type="button" 
+                class="btn btn-secondary"
+                [ngClass]="{'active': selectedMake === make }" 
+                *ngFor="let make of makes"
+                (click)="makeClick(make)">{{make}}</button>
+        </div>
+        <ul>
+            <li *ngFor="let car of cars">
+                <a uiSref=".car" [uiParams]="{ carId: car.id }" uiSrefActive="selected">[{{ car.year }}] {{ car.make }} {{ car.model }}</a>
+            </li>
+        </ul>
+        <ui-view></ui-view>
     </div>
-    <ul>
-        <li *ngFor="let car of cars">
-            <a uiSref=".car" [uiParams]="{ carId: car.id }" uiSrefActive="selected">[{{ car.year }}] {{ car.make }} {{ car.model }}</a>
-        </li>
-    </ul>
-    <ui-view></ui-view>
 </div>

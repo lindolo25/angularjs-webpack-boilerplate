@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body ng-class="{ 'show-legend': showLegend }">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -16,15 +16,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav navbar-collapse">
                 <a class="nav-item nav-link" ui-sref="home">Home</a>
                 <a class="nav-item nav-link" ui-sref="contact">Contact</a>
                 <a class="nav-item nav-link" ui-sref="people">People</a>
                 <a class="nav-item nav-link" ui-sref="cars">Cars</a>
             </div>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" ng-model="showLegend" id="customControlInline">
+                    <label class="custom-control-label" for="customControlInline">show Legend</label>
+                </div>
+            </form>
         </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid ng1-state" data-name="root">
         <ui-view></ui-view>
     </div>
 </body>
