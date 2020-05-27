@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from "@angular/core";
 import template from "./carDetail.view.html";
 import { ICar } from '../../../interfaces/ICar';
 
+import { GithubUsersApiService } from '../../../services/githubUsersApi.service';
+
 @Component({
 	selector: 'carDetail',
 	template: template
@@ -13,7 +15,9 @@ export class CarDetail implements OnInit {
 	car: ICar;
 	edit: Boolean = false;
     
-	constructor () { }
+	constructor (githubUsersApiService: GithubUsersApiService) {
+		console.log(githubUsersApiService);
+	}
 
 	ngOnInit() {
 		this.car = { ...this.pristine };
