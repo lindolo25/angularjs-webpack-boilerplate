@@ -4,14 +4,15 @@ import './app.scss';
 import 'bootstrap';
 import angular from 'angular';
 import 'oclazyload';
-import appModules from './modules';
-import services from './services/services.module';
-import components from './components/components.module';
 
 import { Angular2BootstrapModule } from './angular2Boostrap.module';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { UrlService } from '@uirouter/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import appModules from './modules';
+import services from './services/services.module';
+import components from './components/components.module';
 
 angular.module('app', [
 	appModules.name,
