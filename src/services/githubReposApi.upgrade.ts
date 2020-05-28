@@ -1,8 +1,9 @@
 
 import { InjectionToken } from '@angular/core';
+import { IGithubRepo } from '../interfaces/IGithub';
 
 export interface GithubReposApiService {
-    getRepos(username: String): Promise<any>;
+    getRepos(username: String): Promise<Array<IGithubRepo>>;
 }
 
 export const GithubReposApiToken = new InjectionToken<GithubReposApiService>('GithubReposApiService');
