@@ -18,14 +18,7 @@
     <div class="repos" ng-if="$ctrl.user">
         <div class="row">
             <div class="col-sm-4" ng-repeat="repo in $ctrl.repos" ng-if="!repo.private">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text mb-1">{{ repo.fullName }}</p>
-                        <span class="badge badge-info">whatchers: {{ repo.watchers }}</span>
-                        <span class="badge badge-info">forks: {{ repo.forks }}</span>
-                        <span class="badge badge-success" ng-show="repo.fork">Fork</span>
-                    </div>
-                </div>
+                <github-repo [repo]="repo"></github-repo>
             </div>
         </div>
     </div>
