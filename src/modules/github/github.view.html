@@ -1,0 +1,14 @@
+<div class="ng1-state" data-name="github">
+    <h1>Seasch for github users.</h1>
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label class="sr-only" for="username">User name</label>
+            <input type="text" class="form-control" id="username" name="username" 
+                ng-model="$ctrl.username"
+                ng-keypress="$ctrl.handleKeyInput($event, $ctrl.username)" />
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" ng-click="$ctrl.findUser($ctrl.username)">Search</button>
+        </div>
+    </div>
+</div>
