@@ -9,12 +9,14 @@ import { UIRouterUpgradeModule } from '@uirouter/angular-hybrid';
 import { carsState } from './modules/cars/cars.stateconfig';
 import { GithubUsersApiService } from './services/githubUsersApi.service';
 import { GithubReposApiProvider } from './services/githubReposApi.upgrade';
+import { ComponentsModule } from './components/ng2components.module';
 
 @NgModule({
     imports: [
         BrowserModule, 
         UpgradeModule, 
         HttpClientModule,
+        ComponentsModule,
         UIRouterUpgradeModule,
         UIRouterUpgradeModule.forRoot({ states: [carsState] }),
     ],
