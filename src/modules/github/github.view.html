@@ -12,13 +12,8 @@
         </div>
     </div>
     <h2 ng-if="!$ctrl.user">Not Found</h2>
-    <div class="profile mt-3" ng-if="$ctrl.user">
-        <img class="border rounded" ng-src="{{ $ctrl.user.avatarUrl }}" ng-attr-alt="{{ $ctrl.user.login }}" height="250" />
-        <h2 class="mt-1">{{ $ctrl.user.name }}</h2>
-        <p>
-            <span>{{ $ctrl.user.login }}</span><br>
-            <span>{{ $ctrl.user.location }}</span>
-        </p>
+    <div class="mt-3 mb-3" ng-if="$ctrl.user">
+        <github-profile [user]="$ctrl.user"></github-profile>
     </div>
     <div class="repos" ng-if="$ctrl.user">
         <div class="row">
