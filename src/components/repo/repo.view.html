@@ -1,0 +1,10 @@
+<div class="ng2-component mb-3" data-name="repo">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text mb-1">{{ repo.fullName }}</p>
+            <span class="badge badge-info">whatchers: {{ repo.watchers }}</span>&nbsp;
+            <span class="badge badge-info">forks: {{ repo.forks }}</span>&nbsp;
+            <span class="badge badge-success" *ngIf="repo.fork">Fork</span>
+        </div>
+    </div>
+</div>
