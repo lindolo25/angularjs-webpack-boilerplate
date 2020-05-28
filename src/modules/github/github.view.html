@@ -1,5 +1,5 @@
 <div class="ng1-state" data-name="github">
-    <h1>Seasch for github users.</h1>
+    <h1>Search for github users.</h1>
     <div class="form-row align-items-center">
         <div class="col-auto">
             <label class="sr-only" for="username">User name</label>
@@ -9,6 +9,29 @@
         </div>
         <div class="col-auto">
             <button type="button" class="btn btn-primary" ng-click="$ctrl.findUser($ctrl.username)">Search</button>
+        </div>
+    </div>
+    <h2 ng-if="!$ctrl.user">Not Found</h2>
+    <div class="profile mt-3" ng-if="$ctrl.user">
+        <img class="border rounded" ng-src="{{ $ctrl.user.avatarUrl }}" ng-attr-alt="{{ $ctrl.user.login }}" height="250" />
+        <h2 class="mt-1">{{ $ctrl.user.name }}</h2>
+        <p>
+            <span>{{ $ctrl.user.login }}</span><br>
+            <span>{{ $ctrl.user.location }}</span>
+        </p>
+    </div>
+    <div class="repos" ng-if="$ctrl.user">
+        <div class="row">
+            <div class="col-sm-4" ng-repeat="repo in $ctrl.repos" ng-if="!repo.private">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text mb-1">{{ repo.fullName }}</p>
+                        <span class="badge badge-info">whatchers: {{ repo.watchers }}</span>
+                        <span class="badge badge-info">forks: {{ repo.forks }}</span>
+                        <span class="badge badge-success" ng-show="repo.fork">Fork</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

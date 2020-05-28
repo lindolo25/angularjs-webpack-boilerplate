@@ -9,8 +9,23 @@ export default {
 
 /**
  * @typedef {{
+ * 		avatarUrl: String;
+ * 		company: String;
+ * 		location: String;
+ * 		login: String;
  * 		name: String;
  * }} GithubUser
+ * 
+ * @typedef {{
+ * 		fork: Boolean;
+ * 		forks: Number;
+ * 		fullName: String;
+ * 		id: Number;
+ * 		license: String;
+ * 		name: String;
+ * 		private: Boolean;
+ * 		watchers: Number;
+ * }} GithubRepo
  * 
  * @typedef {{
  * 		getRepos(username: String): Promise<Array<GithubRepo>>
@@ -53,6 +68,10 @@ function githubController(usersService, reposService) {
 				ctrl.user = result[0];
 				ctrl.repos = result[1];
 			}).
-			catch(error => console.log(error));
+			catch(error => {
+				console.log(error);
+				ctrl.user = null;
+				ctrl.repos = null;
+			});
 	};
 }
