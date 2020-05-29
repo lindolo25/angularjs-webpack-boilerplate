@@ -2,7 +2,6 @@ import { Component, Input, OnInit, Inject } from "@angular/core";
 import template from "./carDetail.view.html";
 import { ICar } from '../../../interfaces/ICar';
 
-import { GithubUsersApiService } from '../../../services/githubUsersApi.service';
 import { GithubReposApiService, GithubReposApiToken } from '../../../services/githubReposApi.upgrade';
 
 @Component({
@@ -16,7 +15,7 @@ export class CarDetail implements OnInit {
 	car: ICar;
 	edit: Boolean = false;
     
-	constructor (githubUsersApiService: GithubUsersApiService, @Inject(GithubReposApiToken) githubReposApiService: GithubReposApiService) {
+	constructor (@Inject(GithubReposApiToken) githubReposApiService: GithubReposApiService) {
 		githubReposApiService
 			.getRepos('lindolo25')
 			.then(repos => {

@@ -1,6 +1,7 @@
 'use strict';
 
 import angular from 'angular';
+// @ts-ignore
 import personTemplate from './person.view.html';
 
 var personComponent = {
@@ -11,21 +12,15 @@ var personComponent = {
 	controller: personController
 };
 
-personController.$inject = ['app.githubReposApiService', 'app.githubUsersApiService'];
-
 export default personComponent;
 
-function personController(githubReposApiService, githubUsersApiService) {
+function personController() {
 
 	let ctrl = this;
 	ctrl.title = 'person';
 
 	ctrl.$onInit = function () {
-		ctrl.person = angular.copy(ctrl.pristine); 
-		githubUsersApiService.getUser('lindolo25')
-			.then(user => {
-				console.log(user);
-			});
+		ctrl.person = angular.copy(ctrl.pristine);
 	};
 
 	ctrl.saveChanges = function saveChanges(person) {
