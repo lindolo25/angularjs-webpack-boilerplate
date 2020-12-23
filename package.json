@@ -1,6 +1,6 @@
 {
-	"name": "clicky-game",
-	"version": "1.0.0",
+	"name": "angularjs-webpack-boilerplate",
+	"version": "0.0.0-development",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -9,6 +9,23 @@
 	},
 	"author": "",
 	"license": "ISC",
+	"release": {
+		"plugins": [
+			"@semantic-release/commit-analyzer",
+			"@semantic-release/release-notes-generator",
+			[
+				"@semantic-release/github",
+				{
+					"assets": [
+						{
+							"path": "dist.zip",
+							"label": "Distribution"
+						}
+					]
+				}
+			]
+		]
+	},
 	"devDependencies": {
 		"@babel/core": "^7.7.4",
 		"@babel/preset-env": "^7.7.4",
@@ -26,6 +43,7 @@
 		"postcss-loader": "^3.0.0",
 		"precss": "^4.0.0",
 		"sass-loader": "^8.0.0",
+		"semantic-release": "^17.3.0",
 		"style-loader": "^1.0.1",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"webpack": "^4.41.2",
