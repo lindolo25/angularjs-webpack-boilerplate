@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build app for PROD environment
+    name: Build and release app
     runs-on: ubuntu-latest
     strategy:
       matrix:
