@@ -18,7 +18,7 @@
 				{
 					"assets": [
 						{
-							"path": ".dist",
+							"path": ".dist/*",
 							"label": "Distribution"
 						}
 					]
