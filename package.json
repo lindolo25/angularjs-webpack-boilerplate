@@ -1,6 +1,6 @@
 {
-	"name": "clicky-game",
-	"version": "1.0.0",
+	"name": "angularjs-webpack-boilerplate",
+	"version": "0.0.0-development",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
